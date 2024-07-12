@@ -169,9 +169,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 */
 
-const title = "Storm Book";
-const author = "Sneha G";
-const img = "https://m.media-amazon.com/images/I/51JEvuZ6mPL._SY445_SX342_.jpg";
+// const title = "Storm Book";
+// const author = "Sneha G";
+// const img = "https://m.media-amazon.com/images/I/51JEvuZ6mPL._SY445_SX342_.jpg";
 
 // const Book = (props)=>{
 //       return (
@@ -197,7 +197,7 @@ const img = "https://m.media-amazon.com/images/I/51JEvuZ6mPL._SY445_SX342_.jpg";
 // }
 
 
-const Book = (props)=>{
+/*const Book = (props)=>{
     
          return(
             <section>
@@ -219,6 +219,112 @@ const App = ()=>{
             <Book />
         </section>
 );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+*/
+/*const firstBook =  {
+    title : "Play Along",
+    author : " Liz Tomforde",
+    image : "https://m.media-amazon.com/images/I/71WHmmsmo+L._SY342_.jpg"
+}
+const secondBook = {
+    title : "The Nightingale",
+    author : "Kristin Hannah",
+    image : "https://m.media-amazon.com/images/I/81OkWjcf4WL._SY342_.jpg"
+}
+const Book = (props)=>{
+        return (
+            <article>
+                <h1>{props.title}</h1>
+                <h2>{props.author}</h2>
+                <img src = {props.image} alt = {props.title}></img>
+            </article>
+        );
+}
+const App = ()=>{
+      return(
+        <section>
+            <Book  author = {firstBook.author} title = {firstBook.title} image = {firstBook.image} />
+            <Book  author = {secondBook.author} title = {secondBook.title} image = {secondBook.image} />
+        </section>
+      );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+//destructuring - extract values from objects or arrays into distinct variable
+const someObject = {
+    name: "sneha",
+    job: "sde",
+    location: "gurgaon"
+};
+console.log(someObject.name);
+const {job , location} = someObject;
+console.log(job);
+//so in function u can destructure
+const Book = (props)=>{
+    const {title , author , image} = props;
+    return (
+        <article>
+            <h1>{title}</h1>
+            <h2>{author}</h2>
+            <img src = {image} alt = {title}></img>
+        </article>
+    );
+}
+//more better way
+const Book = ({title , author , image})=>{
+    
+    return (
+        <article>
+            <h1>{title}</h1>
+            <h2>{author}</h2>
+            <img src = {image} alt = {title}></img>
+        </article>
+    );
+} 
+*/
+const firstBook =  {
+    title : "Play Along",
+    author : " Liz Tomforde",
+    image : "https://m.media-amazon.com/images/I/71WHmmsmo+L._SY342_.jpg"
+}
+const secondBook = {
+    title : "The Nightingale",
+    author : "Kristin Hannah",
+    image : "https://m.media-amazon.com/images/I/81OkWjcf4WL._SY342_.jpg"
+}
+const Book = ({title , author , image, children})=>{
+    console.log(children);
+        return (
+            <article>
+                <h1>{title}</h1>
+                <h2>{author}</h2>
+                <img src = {image} alt = {title}></img>
+                {children}
+            </article>
+        );
+}
+const App = ()=>{
+      return(
+        <section>
+            <Book
+            author = {firstBook.author} 
+            title = {firstBook.title} 
+            image = {firstBook.image}
+            >
+                {/*children begin*/}
+            <p>hi this is sneha</p> 
+            <button>click me</button>  
+                {/*children end*/}
+            </Book>
+            <Book  
+            author = {secondBook.author} 
+            title = {secondBook.title} 
+            image = {secondBook.image} />
+        </section>
+      );
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
