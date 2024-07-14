@@ -328,3 +328,13 @@ const App = ()=>{
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
+const Book = ({title , author , image})=>{
+    
+    return (
+        <article>
+            <h1>{title}</h1>
+            <h2>{author}</h2>
+            <img src = {image} alt = {title}></img>
+        </article>
+    );
+} 
