@@ -285,56 +285,107 @@ const Book = ({title , author , image})=>{
     );
 } 
 */
-const firstBook =  {
-    title : "Play Along",
-    author : " Liz Tomforde",
-    image : "https://m.media-amazon.com/images/I/71WHmmsmo+L._SY342_.jpg"
+// const firstBook =  {
+//     title : "Play Along",
+//     author : " Liz Tomforde",
+//     image : "https://m.media-amazon.com/images/I/71WHmmsmo+L._SY342_.jpg"
+// }
+// const secondBook = {
+//     title : "The Nightingale",
+//     author : "Kristin Hannah",
+//     image : "https://m.media-amazon.com/images/I/81OkWjcf4WL._SY342_.jpg"
+// }
+// const Book = ({title , author , image, children})=>{
+//     console.log(children);
+//         return (
+//             <article>
+//                 <h1>{title}</h1>
+//                 <h2>{author}</h2>
+//                 <img src = {image} alt = {title}></img>
+//                 {children}
+//             </article>
+//         );
+// }
+// const App = ()=>{
+//       return(
+//         <section>
+//             <Book
+//             author = {firstBook.author} 
+//             title = {firstBook.title} 
+//             image = {firstBook.image}
+//             >
+//                 {/*children begin*/}
+//             <p>hi this is sneha</p> 
+//             <button>click me</button>  
+//                 {/*children end*/}
+//             </Book>
+//             <Book  
+//             author = {secondBook.author} 
+//             title = {secondBook.title} 
+//             image = {secondBook.image} />
+//         </section>
+//       );
+// }
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<App />);
+
+
+const novels = [
+    {
+        author : 'sneha',
+        title : 'myHome',
+
+    },
+    {
+        author : 'achal',
+        title : "myFlat"
+    },
+];
+
+const Novel = (props)=>{
+    const {author , title} = props;
+    return
+    <article>
+        <h1>{author}</h1>
+        <p>{title}</p>
+    </article>
 }
-const secondBook = {
-    title : "The Nightingale",
-    author : "Kristin Hannah",
-    image : "https://m.media-amazon.com/images/I/81OkWjcf4WL._SY342_.jpg"
+
+function novelList(){
+    return <section>{novels}</section>
 }
-const Book = ({title , author , image, children})=>{
-    console.log(children);
-        return (
-            <article>
-                <h1>{title}</h1>
-                <h2>{author}</h2>
-                <img src = {image} alt = {title}></img>
-                {children}
-            </article>
-        );
+console.log("hey");
+
+const names = ['sneha' , 'achal' , 'vidit'];
+
+const newNames = names.map(
+    (names) => {
+        console.log(names);
+      return <h1>{names}</h1>;
 }
-const App = ()=>{
-      return(
-        <section>
-            <Book
-            author = {firstBook.author} 
-            title = {firstBook.title} 
-            image = {firstBook.image}
-            >
-                {/*children begin*/}
-            <p>hi this is sneha</p> 
-            <button>click me</button>  
-                {/*children end*/}
-            </Book>
-            <Book  
-            author = {secondBook.author} 
-            title = {secondBook.title} 
-            image = {secondBook.image} />
-        </section>
-      );
+);
+function List(){
+    return <section>{newNames}</section>
 }
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
-const Book = ({title , author , image})=>{
-    
-    return (
-        <article>
-            <h1>{title}</h1>
-            <h2>{author}</h2>
-            <img src = {image} alt = {title}></img>
-        </article>
+
+
+function List1(){
+    return(
+         <section>
+      {novels.map(
+            (novel)=>
+            {
+                console.log(novel);
+
+                return(
+                    <div>
+                        {novel.author}
+                    </div>
+                );
+            }
+      )
+
+    }
+    </section>
     );
-} 
+}
