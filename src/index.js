@@ -329,7 +329,7 @@ const Book = ({title , author , image})=>{
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<App />);
 
-
+/*
 const novels = [
     {
         author : 'sneha',
@@ -388,4 +388,152 @@ function List1(){
     }
     </section>
     );
+}*/
+
+const names = ['sneha' , 'achal' , 'ayushi' , 'govinda'];
+const newNames = names.map(
+    (name)=>{
+        return <h1>{name}</h1>;
+    }
+);
+function Display(){
+    return(
+        <>
+          {newNames};
+        </>
+    )
 }
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Display />);
+
+// const books = [
+//     {
+//         author : "Amish Tripathi ",
+//         title : "The Immortals of Meluha",
+//         image : "https://m.media-amazon.com/images/I/818bGgNn0EL._SY342_.jpg",
+//     },
+//     {
+//         author : "Alex Michaelides",
+//         title : "THE SILENT PATIENT",
+//         image : "https://m.media-amazon.com/images/I/81JJPDNlxSL._SY342_.jpg",
+
+//     },
+// ]
+
+// const book = (props)=>{
+//     const {author , title , image} = props;
+//     return(
+//         <section>
+//             <h1>{author}</h1>
+//             <h2>{title}</h2>
+//             <img src = {image} alt = {title}></img>
+//         </section>
+//     )
+// }
+
+// function BookList(){
+//     return
+//     <section>
+//         {books} //show nothing
+//     </section>
+// }
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<BookList />);
+
+// const books = [
+//     {
+//         author : "Amish Tripathi ",
+//         title : "The Immortals of Meluha",
+//         image : "https://m.media-amazon.com/images/I/818bGgNn0EL._SY342_.jpg",
+//     },
+//     {
+//         author : "Alex Michaelides",
+//         title : "THE SILENT PATIENT",
+//         image : "https://m.media-amazon.com/images/I/81JJPDNlxSL._SY342_.jpg",
+
+//     },
+// ]
+
+// const Book = (props)=>{
+//     const {author , title , image} = props;
+//     return(
+//         <section>
+//             <h1>{author}</h1>
+//             <h2>{title}</h2>
+//             <img src = {image} alt = {title}></img>
+//         </section>
+//     )
+// }
+
+// function BookList(){
+//     return(
+//     <section>
+//         {books.map(
+//             (b1 , index) => (
+//                <Book key = {index} image = {b1.image} title = {b1.title} author = {b1.author} />
+//             )
+//         )}
+//     </section>
+//     );
+// }
+
+// function BookList(){
+//     return(
+//     <section>
+//         {books.map(
+//             (b1) => {
+//                 const { image, title, author } = b1;  
+//               return <Book key = {title} image = {image} title = {title} author = {author} />
+//             }
+//         )}
+//     </section>
+//     );
+// }
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<BookList />);
+
+//key prop
+
+const books = [
+    {
+        author : "Amish Tripathi ",
+        title : "The Immortals of Meluha",
+        image : "https://m.media-amazon.com/images/I/818bGgNn0EL._SY342_.jpg",
+        id : 1,
+    },
+    {
+        author : "Alex Michaelides",
+        title : "THE SILENT PATIENT",
+        image : "https://m.media-amazon.com/images/I/81JJPDNlxSL._SY342_.jpg",
+        id : 2,
+    },
+]
+
+const Book = ({b1})=>{
+    const {author , title , image } = b1;
+    return(
+        <section>
+            <h1>{author}</h1>
+            <h2>{title}</h2>
+            <img src = {image} alt = {title}></img>
+            
+        </section>
+    );
+};
+
+function BookList(){
+    return(
+    <section>
+        {books.map(
+            (b1) => {
+                const { image, title, author,id } = b1;  
+              return <Book b1 = {b1} key = {id} />;
+            }
+        )}
+    </section>
+    );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<BookList />);
+
+//index is not advised if list is changing
