@@ -390,19 +390,19 @@ function List1(){
     );
 }*/
 
-const names = ['sneha' , 'achal' , 'ayushi' , 'govinda'];
-const newNames = names.map(
-    (name)=>{
-        return <h1>{name}</h1>;
-    }
-);
-function Display(){
-    return(
-        <>
-          {newNames};
-        </>
-    )
-}
+// const names = ['sneha' , 'achal' , 'ayushi' , 'govinda'];
+// const newNames = names.map(
+//     (name)=>{
+//         return <h1>{name}</h1>;
+//     }
+// );
+// function Display(){
+//     return(
+//         <>
+//           {newNames};
+//         </>
+//     )
+// }
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(<Display />);
 
@@ -493,7 +493,7 @@ function Display(){
 // root.render(<BookList />);
 
 //key prop
-
+/*
 const books = [
     {
         author : "Amish Tripathi ",
@@ -535,5 +535,89 @@ function BookList(){
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<BookList />);
-
+*/
 //index is not advised if list is changing
+
+
+//vanilla js => plain js without any library or frameword/ using js without additional tools like react or angular
+
+// const btn = document.getElementById("btn");
+// btn.addEventListener("click" , function(e){
+// }
+// );
+
+// const Example = ()=>{
+   
+//     const handleButton = ()=>{
+//         alert('handle button');
+//     };
+//     return(
+//         <section>
+//             <button onClick={handleButton}> click me </button>
+//         </section>
+//     )
+// }
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Example />);
+
+// const EventExample = ()=>{
+//     const handleForminput = (e)=>{
+//         console.log(e);
+//         console.log(`Input name : ${e.target.name}`);
+//         console.log(`Input value : ${e.target.value}`);
+//     };
+//     const handleButtonClick = ()=>{
+//         alert("handle button click");
+//     };
+//     const handleFormSubmission =(e) =>{
+//         e.preventDefault();
+//         console.log('form submitted');
+//     };
+
+//     return(
+//         <section>
+//              <form onSubmit = {handleFormSubmission}>
+//                 <h2>my form</h2>
+//                 <input 
+//                 type = "text"
+//                 name = "example"
+//                 onChange={handleForminput}></input>
+//                 <button type = "submit">submit form</button>
+//                 {/* <button type = "submit" onClick={handleFormSubmission}>submit the form</button> */}
+//              </form>
+//              <button onClick={handleButtonClick}>click me</button>
+
+//         </section>
+//     );
+// };
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<EventExample />);
+
+const NextExample = ()=>{
+    return(
+    <section>
+      <h1>Form</h1>
+      <form>
+        <input
+        type = "text"
+        name = "example"
+        onChange={(e)=>{
+            console.log(e);
+            console.log(e.target.name);
+            console.log(e.target.value);
+        }}></input>
+        <button type = "button" onClick={()=>{
+            console.log("u clicked the button")
+        }}>click here</button>
+        <button type = "submit"  onClick = {(e)=>{
+            e.preventDefault();
+            console.log("hi its submitted");
+        }}>submit</button>
+            
+        
+      </form>
+    </section>
+    );
+};
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<NextExample />);
