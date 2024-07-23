@@ -621,3 +621,111 @@ const NextExample = ()=>{
 };
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(<NextExample />);
+
+
+    const Book =(props)=>{
+        const {img , title , author} = props;
+        const displayTitle = ()=>{
+            console.log(title);
+        };
+
+        return(
+            <article>
+                <img src = {img} alt = {title} />
+                <h2>{title}</h2>
+                <button onClick={displayTitle}>display Title</button>
+                <h4>{author}</h4>
+            </article>
+        );
+    };
+    function BookList() {
+        return (
+          <section>
+            {books.map((book) => {
+              return <Book {...book} key={book.id} />;
+            })}
+          </section>
+        );
+      }
+
+    function Booklist(){
+        const someValue = "sneha";
+        const displayValue = (someValue)=>{
+            console.log(someValue);
+        }
+        return(
+            <section>
+                {books.map(
+                    (book) =>{
+                        return <Books {...book} key = {book.id} displayValue = {displayValue} />;
+                    }
+                )}
+
+            </section>
+        );
+    };
+    const Books = (props)=>{
+         const {image,title , author , displayValue} = props;
+         return(
+            <section>
+                <h1>{title}</h1>
+                <img src = {image} alt = {title}></img>
+                <button onClick={displayValue}>click me</button>
+                <h4>{author}</h4>
+            </section>
+         )
+    }
+
+    const BookList = ()=>{
+        const getBook = (id)=>{
+                   const b1 = book.find((b1) => b1.id === id);
+                   console.log(b1);
+               
+        };
+        return (
+            <section>
+                {Book.map((b1) =>{
+                    return <Book {...b1} key = {b1.id} getBook = {getBook} />
+                })
+                }
+            </section>
+        )
+    };
+
+    const Book = (props)=>{
+          const {title , author} = props;
+          return(
+          <section>
+                <h1>{author}</h1>
+                <h4>{title}</h4>
+                <button type = "button" onClick={getBook(id)}>click here</button>
+          </section>
+          );
+    }
+
+    const Book = (props)=>{
+        const {title , author} = props;
+        const getSinglebook = ()=>{
+            getBook(id);
+        };
+        return(
+        <section>
+              <h1>{author}</h1>
+              <h4>{title}</h4>
+              <button type = "button" onClick={getSinglebook}>click here</button>
+        </section>
+        );
+  }
+  const Book = (props)=>{
+    const {title , author} = props;
+    const getSinglebook = ()=>{
+        getBook(id);
+    };
+    return(
+    <section>
+          <h1>{author}</h1>
+          <h4>{title}</h4>
+          <button type = "button" onClick={() => getBook(id)}>click here</button>
+    </section>
+    );
+}
